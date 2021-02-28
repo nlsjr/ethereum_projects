@@ -7,6 +7,9 @@ contract Custodia {
     uint256 public valor;
     bool public custodiaEmAndamento;
     
+    //evento disparado com as informacoes necessarias
+    event NovaCustodia(address solicitante, address arbitro, address recebedor, uint256 valor);
+    
     function iniciarCustodia(address novoArbitro, address payable novoRecebedor) public payable {
         require(!custodiaEmAndamento, "Custodia em andamento");
         custodiaEmAndamento = true;
@@ -14,6 +17,8 @@ contract Custodia {
         pagador = msg.sender;
         arbitro = novoArbitro;
         recebedor = novoRecebedor;
+        
+        emit NovaCustodia(msg.sender, arbitro, recebedor, msg.value);
     }
     
     function pagar() public {
