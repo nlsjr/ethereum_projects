@@ -1,0 +1,16 @@
+node version 14.15.4
+npm version 6.14.10
+
+npm init
+
+npm i -g truffle
+
+truffle init
+contracts: Pasta onde ficaram seus contratos
+migrations: Pasta onde ficaram os arquivo de migração/deploy dos seus contratos.
+test: Pasta onde ficaram os arquivos de testes
+truffle-config.js: Arquivo onde serão declaradas as configurações do seu projeto, como compilador, redes e etc.
+
+
+biblioteca para o Token ERC20
+npm i @openzeppelin/contracts
